@@ -41,6 +41,18 @@ public class Data {
 		}
 		return false;
 	}
+	public Item matchNutrient(String nutrient){
+		for(int i = 0; i < items.size(); i++){
+			for(int j = 0; j < items.get(i).nutrientSize(); i++){
+				if(items.get(i).getnutrient(j)== nutrient){
+					return items.get(i);
+				}
+			}
+		}
+		System.out.println("No item with specified Nutrient was found \n");
+		return null;
+		
+	}
 	public void printlist(){
 		for(int i =0; i < items.size(); i++){
 			System.out.println(items.get(i).getName() + "\n");

@@ -11,7 +11,7 @@ private String Allergies;
 		
 		this.Allergies= Allergies;
 	}
-public String get(){
+public String getallergies(){
 	return Allergies;
 }
 public void setNutrients(String Allergies){

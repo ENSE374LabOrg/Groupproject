@@ -46,10 +46,16 @@ public class Item {
 	
 		
 	}
-	public int nutrientsSize(){
+	public int nutrientSize(){
 		return this.nutrients.size();
 	}
 	public int allergiesSize(){
 		return this.allergies.size();
+	}
+	public String getnutrient(int index){
+		return this.nutrients.get(index).getNutrients();
+	}
+	public String getallergy(int index){
+		return this.allergies.get(index).getallergies();
 	}
 }
