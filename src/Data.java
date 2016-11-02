@@ -41,37 +41,38 @@ public class Data {
 	}
 	public ArrayList<Item> matchNutrient(String nutrient){
 		ArrayList<Item> matches = new ArrayList<Item>();
-		for(int i = 0; i < items.size(); i++){
-			for(int j = 0; j < items.get(i).nutrientSize(); i++){
-				if(items.get(i).getnutrient(j)== nutrient){
-					matches.add(items.get(i));
+		for(int i = 0; i < this.items.size(); i++){
+			
+			for(int j = 0; j < this.items.get(i).nutrientSize(); j++){
+				if(this.items.get(i).getnutrient(j)== nutrient){
+					matches.add(this.items.get(i));
 				}
 			}
 		}
 		if(matches.isEmpty()){
-			System.out.println("No item with specified Nutrient was found \n");
+			System.out.println("No item with specified Nutrient was found");
 		}
 		return matches;
 		
 	}
 	public ArrayList<Item> matchallergy(String allergy){
 		ArrayList<Item> matches = new ArrayList<Item>();
-		for(int i = 0; i < items.size(); i++){
-			for(int j = 0; j < items.get(i).allergiesSize(); i++){
-				if(items.get(i).getallergy(j)== allergy){
-					matches.add(items.get(i));
+		for(int i = 0; i < this.items.size(); i++){
+			for(int j = 0; j < this.items.get(i).allergiesSize(); j++){
+				if(this.items.get(i).getallergy(j)== allergy){
+					matches.add(this.items.get(i));
 				}
 			}
 		}
 		if(matches.isEmpty()){
-			System.out.println("No item with specified Nutrient was found \n");
+			System.out.println("No item with specified Nutrient was found");
 		}
 		return matches;
 		
 	}
 	public void printlist(){
 		for(int i =0; i < items.size(); i++){
-			System.out.println(items.get(i).getName() + "\n");
+			System.out.println(items.get(i).getName());
 		}
 	}
 }
