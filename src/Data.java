@@ -29,13 +29,12 @@ public class Data {
 		else{
 			for(int i =0; i < items.size(); i++){
 				if(items.get(i).getName() == removename){
-					this.items.remove(removename);
-					System.out.println("Item found, being removed now");
-					return true;
-				}
-				
+					if(items.remove(i) != null){
+						System.out.println("Item found, being removed now");
+						return true;
+					}	
+				}	
 			}
-			
 		}
 		return false;
 	}
