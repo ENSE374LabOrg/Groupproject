@@ -1,5 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
+import java.util.stream.Collectors;
 
 /**
  * 
@@ -22,8 +24,17 @@ public class Data {
 	public void addItem(String name, ArrayList<Nutrients> nutrients, ArrayList<Allergies> allergies){
 		this.items.add(new Item(name, nutrients, allergies));
 	}
-	public boolean removeItem(String name){
-		
+	public boolean removeItem(String removename){
+		if(this.items.isEmpty()){
+			System.out.println("No Items in list");
+		}
+		else{
+			List<Item> result = items.stream().filter(a -> Objects.equals(a.getName(), removename)).collect(Collectors.toList());
+			if(this.items.remove(result)){
+				return true;
+			}
+			
+		}
 		return false;
 	}
 }
