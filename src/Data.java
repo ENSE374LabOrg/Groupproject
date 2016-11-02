@@ -53,6 +53,18 @@ public class Data {
 		return null;
 		
 	}
+	public Item matchallergy(String allergy){
+		for(int i = 0; i < items.size(); i++){
+			for(int j = 0; j < items.get(i).allergiesSize(); i++){
+				if(items.get(i).getallergy(j)== allergy){
+					return items.get(i);
+				}
+			}
+		}
+		System.out.println("No item with specified Nutrient was found \n");
+		return null;
+		
+	}
 	public void printlist(){
 		for(int i =0; i < items.size(); i++){
 			System.out.println(items.get(i).getName() + "\n");
