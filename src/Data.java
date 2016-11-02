@@ -22,7 +22,7 @@ public class Data {
 	public void addItem(Item item){
 		this.items.add(new Item(item));
 	}
-	public boolean removeItem(String removename){
+	public boolean removeItem(String removename){ //Not Working properly
 		if(this.items.isEmpty()){
 			System.out.println("No Items in list");
 		}
