@@ -1,7 +1,5 @@
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
-import java.util.stream.Collectors;
 
 /**
  * 
@@ -41,28 +39,34 @@ public class Data {
 		}
 		return false;
 	}
-	public Item matchNutrient(String nutrient){
+	public ArrayList<Item> matchNutrient(String nutrient){
+		ArrayList<Item> matches = new ArrayList<Item>();
 		for(int i = 0; i < items.size(); i++){
 			for(int j = 0; j < items.get(i).nutrientSize(); i++){
 				if(items.get(i).getnutrient(j)== nutrient){
-					return items.get(i);
+					matches.add(items.get(i));
 				}
 			}
 		}
-		System.out.println("No item with specified Nutrient was found \n");
-		return null;
+		if(matches.isEmpty()){
+			System.out.println("No item with specified Nutrient was found \n");
+		}
+		return matches;
 		
 	}
-	public Item matchallergy(String allergy){
+	public ArrayList<Item> matchallergy(String allergy){
+		ArrayList<Item> matches = new ArrayList<Item>();
 		for(int i = 0; i < items.size(); i++){
 			for(int j = 0; j < items.get(i).allergiesSize(); i++){
 				if(items.get(i).getallergy(j)== allergy){
-					return items.get(i);
+					matches.add(items.get(i));
 				}
 			}
 		}
-		System.out.println("No item with specified Nutrient was found \n");
-		return null;
+		if(matches.isEmpty()){
+			System.out.println("No item with specified Nutrient was found \n");
+		}
+		return matches;
 		
 	}
 	public void printlist(){
