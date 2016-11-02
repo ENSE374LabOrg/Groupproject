@@ -46,4 +46,10 @@ public class Item {
 	
 		
 	}
+	public int nutrientsSize(){
+		return this.nutrients.size();
+	}
+	public int allergiesSize(){
+		return this.allergies.size();
+	}
 }
