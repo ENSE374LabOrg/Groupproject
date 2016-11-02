@@ -3,7 +3,7 @@ public class Allergies {
 private String Allergies;
 	
 	public Allergies() {
-		this.Allergies= "";
+		this.Allergies= "default";
 		
 	}
 	

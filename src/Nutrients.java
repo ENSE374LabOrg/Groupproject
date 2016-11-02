@@ -11,7 +11,7 @@ public class Nutrients {
 	private String Nutrients;
 	
 	public Nutrients() {
-		this.Nutrients= "";
+		this.Nutrients= "default";
 		
 	}
 	

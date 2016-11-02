@@ -21,17 +21,21 @@ public class Data {
 		this.items = items;
 	}
 	
-	public void addItem(String name, ArrayList<Nutrients> nutrients, ArrayList<Allergies> allergies){
-		this.items.add(new Item(name, nutrients, allergies));
+	public void addItem(Item item){
+		this.items.add(new Item(item));
 	}
 	public boolean removeItem(String removename){
 		if(this.items.isEmpty()){
 			System.out.println("No Items in list");
 		}
 		else{
-			List<Item> result = items.stream().filter(a -> Objects.equals(a.getName(), removename)).collect(Collectors.toList());
-			if(this.items.remove(result)){
-				return true;
+			for(int i =0; i < items.size(); i++){
+				if(items.get(i).getName() == removename){
+					this.items.remove(removename);
+					System.out.println("Item found, being removed now");
+					return true;
+				}
+				
 			}
 			
 		}
