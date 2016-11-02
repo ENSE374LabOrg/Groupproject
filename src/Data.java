@@ -37,4 +37,9 @@ public class Data {
 		}
 		return false;
 	}
+	public void printlist(){
+		for(int i =0; i < items.size(); i++){
+			System.out.println(items.get(i).getName() + "\n");
+		}
+	}
 }
