@@ -12,17 +12,17 @@ import java.util.List;
 public class Data {
 	private List<Item> items;
 	
-	public Data(){
+	public Data(){ // Default constructor
 		this.items = new ArrayList<Item>();
 	}
-	public Data(ArrayList<Item> items){
+	public Data(ArrayList<Item> items){//Constructor
 		this.items = items;
 	}
 	
-	public void addItem(Item item){
+	public void addItem(Item item){//Adds a item to the items list
 		this.items.add(new Item(item));
 	}
-	public boolean removeItem(String removename){ //Not Working properly
+	public boolean removeItem(String removename){ //Removes Item with given name
 		if(this.items.isEmpty()){
 			System.out.println("No Items in list");
 		}
@@ -38,7 +38,7 @@ public class Data {
 		}
 		return false;
 	}
-	public ArrayList<Item> matchNutrient(String nutrient){
+	public ArrayList<Item> matchNutrient(String nutrient){//returns list of items that match the search criteria
 		ArrayList<Item> matches = new ArrayList<Item>();
 		for(int i = 0; i < this.items.size(); i++){
 			
@@ -54,7 +54,7 @@ public class Data {
 		return matches;
 		
 	}
-	public ArrayList<Item> matchallergy(String allergy){
+	public ArrayList<Item> matchallergy(String allergy){//returns list of items that match the search criteria
 		ArrayList<Item> matches = new ArrayList<Item>();
 		for(int i = 0; i < this.items.size(); i++){
 			for(int j = 0; j < this.items.get(i).allergiesSize(); j++){
@@ -69,9 +69,10 @@ public class Data {
 		return matches;
 		
 	}
-	public void printlist(){
+	public void printlist(){//Prints List of items
 		for(int i =0; i < items.size(); i++){
 			System.out.println(items.get(i).getName());
 		}
 	}
+	
 }
