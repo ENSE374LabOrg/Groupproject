@@ -39,9 +39,17 @@ public class program {
 				info.addItem(item);
 			}
 			in.close();
-			info.printlist();
-			info.printlistwithnutrients();
-			info.printlistwithallergies();
+			ArrayList<Item> match1 = new ArrayList<Item>();
+			ArrayList<Item> match2 = new ArrayList<Item>();
+			match1 = info.matchNutrient("Vitamin E");
+			match2 = info.matchallergy("Chocolate");
+			for(int i = 0; i < match1.size() ; i++){
+				System.out.println("Matches found for nutrients:" + match1.get(i).getName());
+			}
+			for(int i = 0; i < match2.size() ; i++){
+				System.out.println("Matches found for allergies:" + match2.get(i).getName());
+			}
+			info.removeItem("Apple");
 			info.printlistfullinfo();
 		}
 		 

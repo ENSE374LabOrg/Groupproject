@@ -28,7 +28,7 @@ public class Data {
 		}
 		else{
 			for(int i =0; i < items.size(); i++){
-				if(items.get(i).getName() == removename){
+				if(items.get(i).getName().equals(removename)){
 					if(items.remove(i) != null){
 						System.out.println("Item found, being removed now");
 						return true;
@@ -43,7 +43,7 @@ public class Data {
 		for(int i = 0; i < this.items.size(); i++){
 			
 			for(int j = 0; j < this.items.get(i).nutrientSize(); j++){
-				if(this.items.get(i).getnutrient(j)== nutrient){
+				if(items.get(i).getnutrient(j).equals(nutrient)){
 					matches.add(this.items.get(i));
 				}
 			}
@@ -58,13 +58,13 @@ public class Data {
 		ArrayList<Item> matches = new ArrayList<Item>();
 		for(int i = 0; i < this.items.size(); i++){
 			for(int j = 0; j < this.items.get(i).allergiesSize(); j++){
-				if(this.items.get(i).getallergy(j)== allergy){
+				if(items.get(i).getallergy(j).equals(allergy)){
 					matches.add(this.items.get(i));
 				}
 			}
 		}
 		if(matches.isEmpty()){
-			System.out.println("No item with specified Nutrient was found");
+			System.out.println("No item with specified Allergy was found");
 		}
 		return matches;
 		
@@ -76,7 +76,7 @@ public class Data {
 	}
 	public void printlistwithnutrients(){//Prints List of items with nutrients
 		for(int i =0; i < items.size(); i++){
-			System.out.println(items.get(i).getName() + ": \n Nutrients:");
+			System.out.println(items.get(i).getName() + ": \nNutrients:");
 			for(int j = 0; j < this.items.get(i).nutrientSize(); j++){
 				System.out.println("-" + items.get(i).getnutrient(j));
 			}
@@ -85,7 +85,7 @@ public class Data {
 	}
 	public void printlistwithallergies(){//Prints List of items with allergies
 		for(int i =0; i < items.size(); i++){
-			System.out.println(items.get(i).getName() + ": \n Allergies:");
+			System.out.println(items.get(i).getName() + ": \nAllergies:");
 			for(int j = 0; j < this.items.get(i).allergiesSize(); j++){
 				System.out.println("-" + items.get(i).getallergy(j));
 			}
@@ -94,7 +94,7 @@ public class Data {
 	}
 	public void printlistfullinfo(){//Prints List of items
 		for(int i =0; i < items.size(); i++){
-			System.out.println(items.get(i).getName() + ": \n Nutrients:");
+			System.out.println(items.get(i).getName() + ": \nNutrients:");
 			for(int j = 0; j < this.items.get(i).nutrientSize(); j++){
 				System.out.println("-" + items.get(i).getnutrient(j));
 			}
