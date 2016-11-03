@@ -74,5 +74,35 @@ public class Data {
 			System.out.println(items.get(i).getName());
 		}
 	}
+	public void printlistwithnutrients(){//Prints List of items with nutrients
+		for(int i =0; i < items.size(); i++){
+			System.out.println(items.get(i).getName() + ": \n Nutrients:");
+			for(int j = 0; j < this.items.get(i).nutrientSize(); j++){
+				System.out.println("-" + items.get(i).getnutrient(j));
+			}
+		}
 	
+	}
+	public void printlistwithallergies(){//Prints List of items with allergies
+		for(int i =0; i < items.size(); i++){
+			System.out.println(items.get(i).getName() + ": \n Allergies:");
+			for(int j = 0; j < this.items.get(i).allergiesSize(); j++){
+				System.out.println("-" + items.get(i).getallergy(j));
+			}
+		}
+	
+	}
+	public void printlistfullinfo(){//Prints List of items
+		for(int i =0; i < items.size(); i++){
+			System.out.println(items.get(i).getName() + ": \n Nutrients:");
+			for(int j = 0; j < this.items.get(i).nutrientSize(); j++){
+				System.out.println("-" + items.get(i).getnutrient(j));
+			}
+			System.out.println("Allergies:");
+			for(int j = 0; j < this.items.get(i).allergiesSize(); j++){
+				System.out.println("-" + items.get(i).getallergy(j));
+			}
+		}
+	
+	}
 }

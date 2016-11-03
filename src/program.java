@@ -19,15 +19,15 @@ public class program {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Data info = new Data();
-		Item item = new Item();
-		ArrayList<Nutrients> nutrients = new ArrayList<Nutrients>();
-		ArrayList<Allergies> allergies = new ArrayList<Allergies>();
 		try {
 
 			//You can change paths or filenames to make the Exception hit.
 			Scanner in = new Scanner(Paths.get("randomdata.csv"));
 
 			while (in.hasNextLine()) {
+				Item item = new Item();
+				ArrayList<Nutrients> nutrients = new ArrayList<Nutrients>();
+				ArrayList<Allergies> allergies = new ArrayList<Allergies>();
 				String externalLine = in.nextLine();
 				String [] parts = externalLine.split("\\|");
 				String name = parts[0];
@@ -40,6 +40,9 @@ public class program {
 			}
 			in.close();
 			info.printlist();
+			info.printlistwithnutrients();
+			info.printlistwithallergies();
+			info.printlistfullinfo();
 		}
 		 
 		catch (IOException e) {
