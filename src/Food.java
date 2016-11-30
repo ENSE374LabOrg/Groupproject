@@ -9,12 +9,12 @@ import java.util.List;
  * @author shamissa
  *
  */
-public class Item {
+public class Food {
 	private String name;
 	private List<Nutrients> nutrients;
 	private List<Allergies> allergies;
 	
-	public Item(){// default Constructor
+	public Food(){// default Constructor
 		this.name = "";
 		this.nutrients = new ArrayList<Nutrients>();
 		this.allergies = new ArrayList<Allergies>();
@@ -24,10 +24,10 @@ public class Item {
 		this.nutrients = nutrients;
 		this.allergies = allergies;
 	}
-	public Item(Item item){//Copy Constructor
-		this.name = item.name;
-		this.allergies = item.allergies;
-		this.nutrients = item.nutrients;
+	public Food(Food food){//Copy Constructor
+		this.name = food.name;
+		this.allergies = food.allergies;
+		this.nutrients = food.nutrients;
 	}
 	public String getName(){//Gets name of item
 		return this.name;
