@@ -12,14 +12,14 @@ import java.util.List;
 public class Food {
 	private String name;
 	private List<Nutrients> nutrients;
-	private List<Allergies> allergies;
+	private List<String> allergies;
 	
 	public Food(){// default Constructor
 		this.name = "";
 		this.nutrients = new ArrayList<Nutrients>();
-		this.allergies = new ArrayList<Allergies>();
+		this.allergies = new ArrayList<String>();
 	}
-	public void setItem(String name, ArrayList<Nutrients> nutrients, ArrayList<Allergies> allergies){// Adds item based on input
+	public void setItem(String name, ArrayList<Nutrients> nutrients, ArrayList<String> allergies){// Adds item based on input
 		this.name = name;
 		this.nutrients = nutrients;
 		this.allergies = allergies;
@@ -55,7 +55,13 @@ public class Food {
 	public String getnutrient(int index){//returns name of nutrient in the list
 		return this.nutrients.get(index).getNutrients();
 	}
+	public List<String> getallergies(){//allergies getter
+		return this.allergies;
+	}
+	public void setAllergies(List<String> Allergies){//allergies setter
+		this.allergies=Allergies;
+	}
 	public String getallergy(int index){//returns name of allergy in the list
-		return this.allergies.get(index).getallergies();
+		return this.allergies.get(index);
 	}
 }

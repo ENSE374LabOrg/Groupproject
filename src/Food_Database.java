@@ -9,18 +9,18 @@ import java.util.List;
  * @author shamissa
  *
  */
-public class Data {
-	private List<Item> items;
+public class Food_Database {
+private List<Food> items;
 	
-	public Data(){ // Default constructor
-		this.items = new ArrayList<Item>();
+	public Food_Database(){ // Default constructor
+		this.items = new ArrayList<Food>();
 	}
-	public Data(ArrayList<Item> items){//Constructor
+	public Food_Database(ArrayList<Food> items){//Constructor
 		this.items = items;
 	}
 	
-	public void addItem(Item item){//Adds a item to the items list
-		this.items.add(new Item(item));
+	public void addItem(Food item){//Adds a item to the items list
+		this.items.add(new Food(item));
 	}
 	public boolean removeItem(String removename){ //Removes Item with given name
 		if(this.items.isEmpty()){
@@ -38,8 +38,8 @@ public class Data {
 		}
 		return false;
 	}
-	public ArrayList<Item> matchNutrient(String nutrient){//returns list of items that match the search criteria
-		ArrayList<Item> matches = new ArrayList<Item>();
+	public ArrayList<Food> matchNutrient(String nutrient){//returns list of items that match the search criteria
+		ArrayList<Food> matches = new ArrayList<Food>();
 		for(int i = 0; i < this.items.size(); i++){
 			
 			for(int j = 0; j < this.items.get(i).nutrientSize(); j++){
@@ -54,8 +54,8 @@ public class Data {
 		return matches;
 		
 	}
-	public ArrayList<Item> matchallergy(String allergy){//returns list of items that match the search criteria
-		ArrayList<Item> matches = new ArrayList<Item>();
+	public ArrayList<Food> matchallergy(String allergy){//returns list of items that match the search criteria
+		ArrayList<Food> matches = new ArrayList<Food>();
 		for(int i = 0; i < this.items.size(); i++){
 			for(int j = 0; j < this.items.get(i).allergiesSize(); j++){
 				if(items.get(i).getallergy(j).equals(allergy)){

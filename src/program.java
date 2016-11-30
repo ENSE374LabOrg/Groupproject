@@ -18,29 +18,29 @@ public class program {
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Data info = new Data();
+		Food_Database info = new Food_Database();
 		try {
 
 			//You can change paths or filenames to make the Exception hit.
 			Scanner in = new Scanner(Paths.get("randomdata.csv"));
 
 			while (in.hasNextLine()) {
-				Item item = new Item();
+				Food item = new Food();
 				ArrayList<Nutrients> nutrients = new ArrayList<Nutrients>();
-				ArrayList<Allergies> allergies = new ArrayList<Allergies>();
+				ArrayList<String> allergies = new ArrayList<String>();
 				String externalLine = in.nextLine();
 				String [] parts = externalLine.split("\\|");
 				String name = parts[0];
 				String nutrient = parts[1];
 				String allergy = parts[2];
 				nutrients.add(new Nutrients(nutrient));
-				allergies.add(new Allergies(allergy));
+				allergies.add(allergy);
 				item.setItem(name, nutrients, allergies);
 				info.addItem(item);
 			}
 			in.close();
-			ArrayList<Item> match1 = new ArrayList<Item>();
-			ArrayList<Item> match2 = new ArrayList<Item>();
+			ArrayList<Food> match1 = new ArrayList<Food>();
+			ArrayList<Food> match2 = new ArrayList<Food>();
 			match1 = info.matchNutrient("Vitamin E");
 			match2 = info.matchallergy("Chocolate");
 			for(int i = 0; i < match1.size() ; i++){
