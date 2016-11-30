@@ -23,7 +23,10 @@ public class program {
 
 			//You can change paths or filenames to make the Exception hit.
 			Scanner in = new Scanner(Paths.get("randomdata.csv"));
-
+			int input = 0;
+			String username;
+			String password;
+			boolean loggedin = false;
 			while (in.hasNextLine()) {
 				Food item = new Food();
 				ArrayList<Nutrients> nutrients = new ArrayList<Nutrients>();
@@ -38,7 +41,41 @@ public class program {
 				item.setItem(name, nutrients, allergies);
 				info.addItem(item);
 			}
-			in.close();
+			do{
+				if(loggedin = false){
+					System.out.println("What Would you like to do?");
+					System.out.println("1.Login:");
+					System.out.println("2.Filter by nutrient:");
+					System.out.println("3.Filter by allergy:");
+					System.out.println("9.END");
+					input = in.nextInt();
+				}
+				if(loggedin = true){
+					System.out.println("What Would you like to do?");
+					System.out.println("2.Filter by nutrient:");
+					System.out.println("3.Filter by allergy:");
+					System.out.println("9.END");
+					input = in.nextInt();
+				}
+				switch(input){
+				case 1:
+					System.out.println("Enter Username:");
+					username = in.next();
+					System.out.println("Enter Password:");
+					password = in.next();
+					
+					loggedin = true;
+					break;
+				case 2:
+					break;
+				case 3:
+					break;
+				default:
+					break;
+				}
+				
+				
+			}while(input != 9);
 			ArrayList<Food> match1 = new ArrayList<Food>();
 			ArrayList<Food> match2 = new ArrayList<Food>();
 			match1 = info.matchNutrient("Vitamin E");
