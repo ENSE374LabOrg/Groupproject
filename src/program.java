@@ -26,6 +26,8 @@ public class program {
 			int input = 0;
 			String username;
 			String password;
+			String userinput;
+			ArrayList<Food> match = new ArrayList<Food>();
 			boolean loggedin = false;
 			while (in.hasNextLine()) {
 				Food item = new Food();
@@ -67,8 +69,22 @@ public class program {
 					loggedin = true;
 					break;
 				case 2:
+					System.out.println("Enter nutrient to filter by:");
+					userinput = in.next();
+					match = info.matchNutrient(userinput);
+					for(int i = 0; i < match.size() ; i++){
+						System.out.println("Matches found for nutrients: " + match.get(i).getName());
+					}
 					break;
 				case 3:
+					System.out.println("Enter allergy to filter by:");
+					userinput = in.next();
+					match = info.matchNutrient(userinput);
+					for(int i = 0; i < match.size() ; i++){
+						System.out.println("Matches found for allergies:" + match.get(i).getName());
+					}
+					break;
+				case 9:
 					break;
 				default:
 					break;
@@ -76,16 +92,9 @@ public class program {
 				
 				
 			}while(input != 9);
-			ArrayList<Food> match1 = new ArrayList<Food>();
-			ArrayList<Food> match2 = new ArrayList<Food>();
-			match1 = info.matchNutrient("Vitamin E");
-			match2 = info.matchallergy("Chocolate");
-			for(int i = 0; i < match1.size() ; i++){
-				System.out.println("Matches found for nutrients:" + match1.get(i).getName());
-			}
-			for(int i = 0; i < match2.size() ; i++){
-				System.out.println("Matches found for allergies:" + match2.get(i).getName());
-			}
+			
+		
+			
 			info.removeItem("Apple");
 			info.printlistfullinfo();
 		}
