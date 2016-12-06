@@ -8,7 +8,7 @@ import java.util.Scanner;
  */
 
 /**
- * @author shamissa
+ * @author Ahmed Shamiss
  * This is just a test file. Use it to test changes.
  */
 public class program {
@@ -19,6 +19,7 @@ public class program {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Food_Database info = new Food_Database();
+		UserProfile profiles = new UserProfile();
 		try {
 
 			//You can change paths or filenames to make the Exception hit.
@@ -50,6 +51,8 @@ public class program {
 					System.out.println("1.Login:");
 					System.out.println("2.Filter by nutrient:");
 					System.out.println("3.Filter by allergy:");
+					System.out.println("4.Print Full list");
+					System.out.println("5.Register");
 					System.out.println("9.END");
 					input = in.nextInt();
 				}
@@ -57,6 +60,7 @@ public class program {
 					System.out.println("What Would you like to do?");
 					System.out.println("2.Filter by nutrient:");
 					System.out.println("3.Filter by allergy:");
+					System.out.println("4.Print Full list");
 					System.out.println("9.END");
 					input = in.nextInt();
 				}
@@ -68,6 +72,7 @@ public class program {
 					in.nextLine();
 					System.out.println("Enter Password:");
 					password = in.nextLine();
+					
 					loggedin = true;
 					break;
 				case 2:
@@ -88,6 +93,11 @@ public class program {
 						System.out.println("Matches found for allergies:" + match.get(i).getName());
 					}
 					break;
+				case 4:
+					info.printlistfullinfo();
+					break;
+				case 5:
+					break;
 				case 9:
 					break;
 				default:
@@ -95,7 +105,7 @@ public class program {
 				}
 				
 			}while(input != 9);
-			info.printlistfullinfo();
+			
 		}
 		catch (IOException e) {
 			e.printStackTrace();

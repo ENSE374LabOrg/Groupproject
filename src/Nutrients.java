@@ -3,7 +3,7 @@
  */
 
 /**
- * @author burns26c
+ * @author Callum Burns
  *
  */
 public class Nutrients {
