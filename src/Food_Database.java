@@ -44,6 +44,7 @@ private List<Food> items;
 			
 			for(int j = 0; j < this.items.get(i).nutrientSize(); j++){
 				if(items.get(i).getnutrient(j).equals(nutrient)){
+					
 					matches.add(this.items.get(i));
 				}
 			}
@@ -59,6 +60,9 @@ private List<Food> items;
 		for(int i = 0; i < this.items.size(); i++){
 			for(int j = 0; j < this.items.get(i).allergiesSize(); j++){
 				if(items.get(i).getallergy(j).equals(allergy)){
+					
+				}
+				else{
 					matches.add(this.items.get(i));
 				}
 			}

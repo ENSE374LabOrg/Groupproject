@@ -17,10 +17,11 @@ public class UserProfile {
 		this.setPassword("default");
 		this.Preferences=new ArrayList<String>(); 
 	}
-	public UserProfile(String Username, String Password,List<String> Preferences) {
+	public UserProfile(String Username, String Password,List<String> Preferences, List<String> Allergy) {
 		this.Username=Username;
 		this.Password=Password;
 		this.Preferences= Preferences;
+		this.Allergies = Allergy;
 	}
 	public String getUsername(){
 		return Username;
@@ -52,13 +53,14 @@ public class UserProfile {
 	}
 
 	public boolean Match(String Password){	
-		if (this.Password==Password){
+		if (this.Password.equals(Password)){
 			return true;
 		}
 		else{
 			return false;
 		}
 	}
+	
 }
  
 
